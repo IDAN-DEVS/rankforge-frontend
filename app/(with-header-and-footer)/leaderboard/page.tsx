@@ -9,7 +9,7 @@ import {
 
 export default function LeaderboardPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32">
       <div className="flex flex-col gap-6">
         <div>
           <h1 className="text-3xl font-semibold mb-2">Leaderboard</h1>

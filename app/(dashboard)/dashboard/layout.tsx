@@ -100,10 +100,7 @@ export default function DashboardLayout({
                 transition={{ type: "spring", damping: 25 }}
               >
                 <div className="flex items-center justify-between p-4 border-b border-gray-500">
-                  <Link
-                    href="/dashboard"
-                    className="flex items-center space-x-2"
-                  >
+                  <Link href="/" className="flex items-center space-x-2">
                     <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                       <span className="text-white font-bold">RF</span>
                     </div>
@@ -140,7 +137,7 @@ export default function DashboardLayout({
         </AnimatePresence>
 
         {/* Main content */}
-        <div className="flex-1 flex flex-col md:ml-64">
+        <div className="flex-1 flex flex-col md:ml-64 max-w-full">
           {/* Top navbar */}
           <header className="bg-background border-b border-gray-500 sticky top-0 z-10">
             <div className="flex items-center justify-between px-8 py-3">
@@ -208,7 +205,7 @@ export default function DashboardLayout({
           </header>
 
           {/* Page content */}
-          <main className="flex-1 overflow-auto p-4 md:p-6 bg-background">
+          <main className="flex-1 overflow-auto p-4 md:p-6 bg-background w-full">
             {children}
           </main>
         </div>

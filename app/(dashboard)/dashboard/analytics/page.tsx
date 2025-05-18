@@ -168,7 +168,7 @@ export default function AnalyticsPage() {
               </div>
             </CardHeader>
 
-            <CardContent>
+            <CardContent className="overflow-x-auto w-full">
               <CombinedChart
                 type="mixed"
                 data={monthlyData}

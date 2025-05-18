@@ -45,7 +45,7 @@ function getStatusBadgeVariant(
 
 export default function ContributionsPage() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 w-full">
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-3xl font-semibold mb-2">Your Contributions</h1>
@@ -58,14 +58,15 @@ export default function ContributionsPage() {
         </Button>
       </div>
 
-      <Card>
+      <Card className="overflow-x-auto max-w-full">
         <CardHeader>
           <CardTitle>Contribution History</CardTitle>
           <CardDescription>
             All your submitted contributions and their status
           </CardDescription>
         </CardHeader>
-        <CardContent>
+
+        <CardContent className="overflow-x-auto w-full">
           <Table>
             <TableHeader>
               <TableRow>
