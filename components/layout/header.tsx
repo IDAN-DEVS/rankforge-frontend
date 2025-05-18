@@ -96,12 +96,11 @@ export function Header() {
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
+            animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden fixed inset-0 top-0 z-40 bg-background pt-20 px-6"
+            className="md:hidden fixed inset-0 top-0 z-40 bg-background backdrop-blur pt-20 px-6 overflow-y-auto"
           >
-            <div className="bg-background w-full h-full absolute top-0 left-0 z-0" />
             <nav className="flex flex-col space-y-6 text-lg relative z-10">
               <Link
                 href="/"
