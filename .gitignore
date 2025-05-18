@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# cursor folder
+.cursor
+PROJECT_RULES.md
+
+#lock files
+*.lock
