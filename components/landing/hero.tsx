@@ -105,7 +105,7 @@ export default function Hero() {
             isCode={false}
             isWindowFocused={true}
             content={
-              <div className="flex items-center justify-center bg-[#0E1330] w-full h-[520px] select-none">
+              <div className="flex items-center justify-center w-full h-[560px] select-none">
                 <Image
                   src={heroDashboard}
                   placeholder="blur"

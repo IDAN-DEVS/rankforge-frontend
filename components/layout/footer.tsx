@@ -171,7 +171,14 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
           <p>© {currentYear} RankForge. All rights reserved.</p>
           <p className="mt-4 md:mt-0">
-            Designed with ❤️ for open source contributors
+            Designed with 💙 by{" "}
+            <Link
+              href="https://x.com/devtochukwu"
+              className="hover:text-primary transition-colors"
+            >
+              devtochukwu
+            </Link>{" "}
+            for open source contributors
           </p>
         </div>
       </div>
