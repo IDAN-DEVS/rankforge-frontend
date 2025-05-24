@@ -53,9 +53,9 @@ export default function FAQCard({
       >
         <h2 className="font-semibold text-md md:text-2xl mb-4">{question}</h2>
         <button className="p-2 cursor-pointer text-xl relative w-6 h-6 flex items-center justify-center">
-          <span className=" bg-foreground absolute h-1 rounded-full w-6" />
+          <span className=" bg-primary absolute h-1 rounded-full w-6" />
           <span
-            className={`absolute bg-foreground h-1 rounded-full w-6 transition-transform duration-500 ease-out ${
+            className={`absolute bg-primary h-1 rounded-full w-6 transition-transform duration-500 ease-out ${
               isOpen === id ? "rotate-0" : "rotate-270"
             }`}
           />
