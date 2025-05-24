@@ -63,7 +63,7 @@ export default function Error({
         >
           <Button onClick={reset} asChild size="lg">
             <div className="flex items-center gap-2">
-              <RefreshCcw className="w-4 h-4 font-bold" />
+              <RefreshCcw className="w-4 h-4" />
               Try Again
             </div>
           </Button>
