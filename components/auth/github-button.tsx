@@ -50,8 +50,10 @@ export function GithubButton({
         router.push("/dashboard");
       }
     } catch (error) {
-      console.error(error);
-      toast.error("Authentication failed. Please try again.");
+      // console.error(error);
+      toast.error("Authentication failed. Please try again.", {
+        description: error instanceof Error ? error.message : "Unknown error",
+      });
     } finally {
       setIsLoading(false);
     }

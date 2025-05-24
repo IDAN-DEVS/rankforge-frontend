@@ -109,11 +109,7 @@ export default function Hero() {
             title="./rankforge/dashboard"
             content={
               <div className="flex items-center justify-center w-full select-none">
-                <Image
-                  src={heroDashboard}
-                  placeholder="blur"
-                  alt="Hero Dashboard"
-                />
+                <Image src={heroDashboard} alt="Hero Dashboard" />
               </div>
             }
           />
