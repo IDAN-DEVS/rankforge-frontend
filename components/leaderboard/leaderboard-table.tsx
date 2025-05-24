@@ -64,11 +64,13 @@ export function LeaderboardTable() {
     return "bg-white";
   };
 
+  const PODIUM_ORDER = [1, 0, 2];
+
   return (
     <div className="space-y-8 py-8">
       {/* Podium display */}
       <div className="flex justify-center items-end gap-6">
-        {[1, 0, 2].map((i) => {
+        {PODIUM_ORDER.map((i) => {
           const user = podium[i];
           return (
             <div
