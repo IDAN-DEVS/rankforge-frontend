@@ -7,8 +7,8 @@ import { Suspense } from "react";
 
 export default function VerifyPage() {
   return (
-    <section className="w-full min-h-screen py-12 bg-[url('/images/auth_bg.svg')] bg-cover bg-center flex items-center justify-center">
-      <Card className="w-full max-w-xl shadow-lg border-primary/10 overflow-hidden">
+    <section className="w-full min-h-screen py-12 flex items-center justify-center">
+      <Card className="max-w-xl w-full mx-auto bg-muted/50 border-primary/10 rounded-lg p-4 overflow-hidden">
         <CardContent className="p-0">
           <Suspense
             fallback={

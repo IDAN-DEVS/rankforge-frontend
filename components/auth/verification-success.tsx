@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Sparkles, UserCheck } from "lucide-react";
+import { CheckCircle, UserCheck } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -96,7 +96,7 @@ export function VerificationSuccess({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center py-12 space-y-8"
+        className="text-center py-8 space-y-4"
       >
         {/* Success Icon */}
         <motion.div
@@ -108,29 +108,11 @@ export function VerificationSuccess({
             damping: 15,
             delay: 0.1,
           }}
-          className="relative w-32 h-32 mx-auto"
+          className="relative w-24 h-24 mx-auto"
         >
-          <div className="absolute inset-0 rounded-full bg-green-100 animate-pulse" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <CheckCircle className="w-20 h-20 text-green-500" />
+            <CheckCircle className="w-12 h-12 text-green-600" />
           </div>
-
-          {/* Orbiting sparkles */}
-          <motion.div
-            className="absolute -right-2 top-4"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-          >
-            <Sparkles className="w-6 h-6 text-yellow-400" />
-          </motion.div>
-
-          <motion.div
-            className="absolute -left-2 bottom-4"
-            animate={{ rotate: -360 }}
-            transition={{ duration: 7, repeat: Infinity, ease: "linear" }}
-          >
-            <Sparkles className="w-5 h-5 text-primary" />
-          </motion.div>
         </motion.div>
 
         {/* Success message */}
@@ -150,11 +132,11 @@ export function VerificationSuccess({
             transition={{ duration: 0.4, delay: 0.5 }}
             className="space-y-2"
           >
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-muted-foreground">
               Your account has been successfully verified.
             </p>
             {email && (
-              <p className="flex items-center justify-center gap-1.5 text-sm text-gray-500">
+              <p className="flex items-center justify-center gap-1.5 text-sm text-muted-foreground">
                 <UserCheck className="w-4 h-4" />
                 <span>{email}</span>
               </p>
@@ -188,7 +170,7 @@ export function VerificationSuccess({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.9 }}
-          className="text-sm text-gray-500"
+          className="text-sm text-muted-foreground"
         >
           You will be redirected to your dashboard in 5 seconds...
         </motion.p>
@@ -202,9 +184,7 @@ export function VerificationSuccess({
           transition={{ duration: 0.4, delay: 1.2 }}
         >
           <Link href={redirectUrl}>
-            <Button className="rounded-full px-8 py-6 bg-primary hover:bg-primary/90 text-white">
-              Go to Dashboard
-            </Button>
+            <Button>Go to Dashboard</Button>
           </Link>
         </motion.div>
       </motion.div>
