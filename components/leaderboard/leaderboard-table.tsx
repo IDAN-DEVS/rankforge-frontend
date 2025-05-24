@@ -234,24 +234,7 @@ export function LeaderboardTable() {
   );
 }
 
-// "use client";
-
-// import { useState } from "react";
-// import {
-//   Table,
-//   TableBody,
-//   TableCell,
-//   TableHead,
-//   TableHeader,
-//   TableRow,
-// } from "@/components/ui/table";
-// import { Button } from "@/components/ui/button";
-// import { ArrowUpDown, ChevronDown, ChevronUp } from "lucide-react";
-// import Link from "next/link";
-// import { MOCK_PROFILES } from "@/lib/constants";
-
-// // Mock data for demonstration
-
+// (No replacement lines; the block is removed entirely)
 // type SortField = "name" | "contributions" | "score" | "rank";
 // type SortDirection = "asc" | "desc";
 
