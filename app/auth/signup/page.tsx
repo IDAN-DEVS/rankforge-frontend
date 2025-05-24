@@ -6,26 +6,24 @@ import { Suspense } from "react";
 
 export default function SignupPage() {
   return (
-    <section className="w-full md:py-34 bg-[url('/images/auth_bg.svg')] bg-cover bg-center">
-      <div className="flex justify-center items-center px-4">
-        <Card className="w-full max-w-md">
-          <CardHeader>
-            <Image
-              src={authAvatar}
-              alt="auth avatar"
-              placeholder="blur"
-              className="mx-auto w-32 h-32"
-            />
-          </CardHeader>
-          <CardContent>
-            <Suspense
-              fallback={<div className="text-center py-4">Loading form...</div>}
-            >
-              <SignupForm />
-            </Suspense>
-          </CardContent>
-        </Card>
-      </div>
+    <section className="w-full md:py-32 py-12 flex justify-center items-center min-h-screen">
+      <Card className="w-full max-w-md bg-muted/50 shadow-none border-primary/10">
+        <CardHeader>
+          <Image
+            src={authAvatar}
+            alt="auth avatar"
+            placeholder="blur"
+            className="mx-auto w-32 h-32"
+          />
+        </CardHeader>
+        <CardContent>
+          <Suspense
+            fallback={<div className="text-center py-4">Loading form...</div>}
+          >
+            <SignupForm />
+          </Suspense>
+        </CardContent>
+      </Card>
     </section>
   );
 }

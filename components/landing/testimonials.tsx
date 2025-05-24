@@ -50,9 +50,9 @@ const TestimonialCard = ({
       viewport={{ once: true }}
       custom={index}
       className={`
-        p-10 relative group hover:bg-gray-50 transition-colors duration-300
-        ${index % 2 === 0 ? "border-r border-gray-200" : ""}
-        ${index < TESTIMONIALS.length - 2 ? "border-b border-gray-200" : ""}
+        p-10 relative group hover:bg-secondary/15 transition-colors duration-300
+        ${index % 2 === 0 ? "border-r border-gray-700" : ""}
+        ${index < TESTIMONIALS.length - 2 ? "border-b border-gray-700" : ""}
       `}
     >
       <QuoteIcon />

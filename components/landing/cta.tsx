@@ -24,7 +24,7 @@ const staggerChildren = {
 
 export default function CallToAction() {
   return (
-    <section className="py-20 w-full bg-primary text-white">
+    <section className="py-20 w-full bg-secondary text-white">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <motion.div
           className="w-full max-w-3xl px-6 mb-12 text-center mx-auto"

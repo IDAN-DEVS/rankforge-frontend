@@ -1,4 +1,4 @@
-import CallToAction from "@/components/landing/cta";
+//import CallToAction from "@/components/landing/cta";
 import FAQSection from "@/components/landing/faq";
 import Features from "@/components/landing/features";
 import Hero from "@/components/landing/hero";
@@ -15,7 +15,7 @@ export default function page() {
       <HowItWorks />
       <Stats />
       <Testimonials />
-      <CallToAction />
+      {/* <CallToAction /> */}
       <FAQSection />
       <Newsletter />
     </>

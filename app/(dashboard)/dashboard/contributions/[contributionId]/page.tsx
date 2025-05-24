@@ -117,7 +117,7 @@ export default function ContributionDetails() {
         transition={{ duration: 0.3, delay: 0.1 }}
       >
         <Card className="overflow-hidden border-slate-200 shadow-sm">
-          <CardHeader className="bg-slate-50 border-b border-slate-100">
+          <CardHeader className="border-b border-slate-100">
             <CardTitle className="text-xl">Contribution Details</CardTitle>
             <CardDescription>
               Full information about your submission

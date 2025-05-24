@@ -170,9 +170,9 @@ export default function Features() {
               viewport={{ once: true }}
               custom={idx}
               className={`
-                p-10 relative group hover:bg-gray-50 transition-colors duration-300
-                ${idx % 2 === 0 ? "border-r border-gray-200" : ""}
-                ${idx < FEATURES.length - 2 ? "border-b border-gray-200" : ""}
+                p-10 relative group hover:bg-secondary/15 transition-colors duration-300
+                ${idx % 2 === 0 ? "border-r border-gray-700" : ""}
+                ${idx < FEATURES.length - 2 ? "border-b border-gray-700" : ""}
               `}
             >
               <div className="mb-6">

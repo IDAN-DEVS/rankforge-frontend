@@ -45,7 +45,7 @@ export default function FAQCard({
       whileInView="visible"
       viewport={{ once: true }}
       custom={id}
-      className="border-b border-gray-200 transition-all duration-300 overflow-hidden"
+      className="border-b border-gray-700 transition-all duration-300 overflow-hidden"
     >
       <div
         className="flex items-start justify-between p-2 md:p-4 cursor-pointer gap-2"
@@ -70,7 +70,7 @@ export default function FAQCard({
         }}
         className="transition-max-height duration-500 ease-in-out overflow-hidden"
       >
-        <div className="p-4 text-sm md:text-base text-gray-600">{answer}</div>
+        <p className="p-4 text-sm md:text-lg text-muted-foreground">{answer}</p>
       </div>
     </motion.div>
   );

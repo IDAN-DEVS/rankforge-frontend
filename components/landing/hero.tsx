@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import Image from "next/image";
 import heroDashboard from "@/public/images/dashboard.png";
+import { Button } from "../ui/button";
 
 // Staggered animation for heading words
 const StaggeredText = ({
@@ -41,8 +42,7 @@ export default function Hero() {
     <section
       className="pt-32 pb-20 px-4 md:px-8 relative overflow-hidden"
       style={{
-        backgroundImage:
-          "linear-gradient(#24A0B51e 1px,transparent 0),linear-gradient(90deg,rgba(0, 0, 0, 0.03) 1px,transparent 0)",
+        backgroundImage: `linear-gradient(#7f4a8e5d 1px,transparent 0),linear-gradient(90deg,#7f4a8e5d 1px,transparent 0)`,
         WebkitBackgroundSize: "6rem 6rem",
         backgroundSize: "6rem 6rem",
         backgroundPosition: "fixed",
@@ -76,18 +76,20 @@ export default function Hero() {
               ease: "easeOut",
             }}
           >
-            <Link
-              href="/auth/signup"
-              className="bg-primary hover:bg-primary/80 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 hover:scale-105 transform-gpu"
+            <Button
+              size="lg"
+              className="hover:bg-primary/80 text-white px-8 py-3 rounded-full font-medium"
             >
-              Get Started
-            </Link>
-            <Link
-              href="/leaderboard"
-              className="text-primary border border-primary/20 hover:bg-white/10 px-8 py-3 rounded-full cursor-pointer font-medium transition-colors hover:scale-105 transform-gpu"
+              <Link href="/auth/signup">Get Started</Link>
+            </Button>
+
+            <Button
+              variant="secondary"
+              size="lg"
+              className="px-8 py-3 rounded-full cursor-pointer font-medium"
             >
-              View Leaderboard
-            </Link>
+              <Link href="/leaderboard">View Leaderboard</Link>
+            </Button>
           </motion.div>
         </div>
 
@@ -99,13 +101,14 @@ export default function Hero() {
             delay: 1,
             ease: [0.215, 0.61, 0.355, 1], // Cubic bezier for a nice bounce effect
           }}
-          className="max-w-4xl w-full mx-auto hidden md:block"
+          className="max-w-6xl w-full mx-auto hidden md:block"
         >
           <MacScreen
             isCode={false}
             isWindowFocused={true}
+            title="./rankforge/dashboard"
             content={
-              <div className="flex items-center justify-center w-full h-[560px] select-none">
+              <div className="flex items-center justify-center w-full select-none">
                 <Image
                   src={heroDashboard}
                   placeholder="blur"

@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { Button } from "../ui/button";
 
 // Animated variants
 const fadeInUp = {
@@ -43,7 +44,7 @@ export default function Newsletter() {
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto">
           <motion.div
-            className="bg-gray-50 p-8 md:p-12 rounded-2xl border border-gray-100 shadow-sm"
+            className="bg-secondary p-8 md:p-12 rounded-2xl border border-gray-700 shadow-sm"
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
@@ -53,7 +54,7 @@ export default function Newsletter() {
               <h2 className="font-bold text-2xl md:text-3xl mb-4">
                 Stay Updated with RankForge
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-muted-foreground mb-6">
                 Get the latest updates, news, and tips for maximizing your
                 contributions.
               </p>
@@ -69,12 +70,13 @@ export default function Newsletter() {
                   className="flex-grow px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
                   required
                 />
-                <button
+                <Button
+                  size="lg"
                   type="submit"
-                  className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full font-medium transition-colors duration-300 whitespace-nowrap"
+                  className="rounded-full font-medium whitespace-nowrap"
                 >
                   Subscribe
-                </button>
+                </Button>
               </div>
 
               {status === "success" && (
@@ -89,7 +91,7 @@ export default function Newsletter() {
                 </p>
               )}
 
-              <p className="text-xs text-gray-500 text-center">
+              <p className="text-xs text-muted-foreground text-center">
                 We respect your privacy. Unsubscribe at any time.
               </p>
             </form>

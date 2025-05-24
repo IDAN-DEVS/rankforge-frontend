@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { MainNav } from "./main-nav";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
+import { Button } from "../ui/button";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,18 +56,22 @@ export function Header() {
           <MainNav />
 
           <div className="ml-6 flex items-center space-x-3">
-            <Link
-              href="/auth/login"
-              className="text-gray-600 hover:text-primary px-4 py-2 rounded-full transition-colors"
+            <Button
+              size="sm"
+              variant="secondary"
+              className="py-3 text-center text-white rounded-full px-6"
             >
-              Sign In
-            </Link>
-            <Link
-              href="/auth/signup"
-              className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium transition-colors"
+              <Link href="/auth/login">Sign In</Link>
+            </Button>
+
+            <Button
+              size="sm"
+              className="py-3 px-6 text-center text-white rounded-full"
             >
-              Sign Up
-            </Link>
+              <Link href="/auth/signup" onClick={() => setIsMenuOpen(false)}>
+                Sign Up
+              </Link>
+            </Button>
           </div>
         </div>
 
@@ -132,13 +137,15 @@ export function Header() {
                 >
                   Sign In
                 </Link>
-                <Link
-                  href="/auth/signup"
-                  className="w-full bg-primary hover:bg-primary/90 text-white py-3 text-center rounded-full transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Sign Up
-                </Link>
+
+                <Button size="sm" className="py-3 text-center rounded-full">
+                  <Link
+                    href="/auth/signup"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Sign Up
+                  </Link>
+                </Button>
               </div>
             </nav>
           </motion.div>

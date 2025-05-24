@@ -21,7 +21,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-12 w-full font-manrope">
+    <section className="py-12 w-full">
       <motion.div
         className="flex w-full max-w-7xl mx-auto justify-center flex-col items-center mb-32"
         variants={fadeInUp}
@@ -48,7 +48,7 @@ export default function FAQSection() {
         </motion.div>
 
         <motion.div
-          className="w-full max-w-3xl px-6 border-t border-primary-100"
+          className="w-full max-w-4xl px-6 border-t border-gray-700"
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"

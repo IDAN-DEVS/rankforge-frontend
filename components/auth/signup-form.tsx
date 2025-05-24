@@ -1,88 +1,88 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  signupSchema,
-  type SignupValues,
-  UserRole,
-} from "@/lib/validations/auth";
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+// import { useState, useEffect } from "react";
+// import { useForm } from "react-hook-form";
+// import { zodResolver } from "@hookform/resolvers/zod";
+// import {
+//   signupSchema,
+//   type SignupValues,
+//   UserRole,
+// } from "@/lib/validations/auth";
+// import { Button } from "@/components/ui/button";
+// import {
+//   Form,
+//   FormControl,
+//   FormField,
+//   FormItem,
+//   FormLabel,
+//   FormMessage,
+// } from "@/components/ui/form";
+// import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import { toast } from "sonner";
-import { useRouter, useSearchParams } from "next/navigation";
-import { RoleTabs } from "./role-tabs";
+// import { toast } from "sonner";
+// import { useRouter, useSearchParams } from "next/navigation";
+// import { RoleTabs } from "./role-tabs";
 import { GithubButton } from "./github-button";
 import { motion } from "motion/react";
 
 export function SignupForm() {
-  const searchParams = useSearchParams();
-  const defaultRole = (searchParams.get("role") as UserRole) || "contributor";
+  // const searchParams = useSearchParams();
+  // const defaultRole = (searchParams.get("role") as UserRole) || "contributor";
 
-  const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
+  // const [isLoading, setIsLoading] = useState(false);
+  // const router = useRouter();
 
-  const form = useForm<SignupValues>({
-    resolver: zodResolver(signupSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      password: "",
-      role: defaultRole,
-    },
-  });
+  // const form = useForm<SignupValues>({
+  //   resolver: zodResolver(signupSchema),
+  //   defaultValues: {
+  //     name: "",
+  //     email: "",
+  //     password: "",
+  //     role: defaultRole,
+  //   },
+  // });
 
   // Update role when form value changes
-  const role = form.watch("role");
+  // const role = form.watch("role");
 
-  const clearForm = () => {
-    form.reset();
-  };
+  // const clearForm = () => {
+  //   form.reset();
+  // };
 
-  async function onSubmit(data: SignupValues) {
-    setIsLoading(true);
+  // async function onSubmit(data: SignupValues) {
+  //   setIsLoading(true);
 
-    try {
-      console.log("Form data:", data);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      toast.success("Account created successfully!");
-      clearForm();
+  //   try {
+  //     console.log("Form data:", data);
+  //     await new Promise((resolve) => setTimeout(resolve, 1000));
+  //     toast.success("Account created successfully!");
+  //     clearForm();
 
-      // Redirect to verification page with user info
-      router.push(
-        `/auth/verify?email=${encodeURIComponent(
-          data.email
-        )}&name=${encodeURIComponent(data.name)}`
-      );
-    } catch (error) {
-      console.error(error);
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setIsLoading(false);
-    }
-  }
+  //     // Redirect to verification page with user info
+  //     router.push(
+  //       `/auth/verify?email=${encodeURIComponent(
+  //         data.email
+  //       )}&name=${encodeURIComponent(data.name)}`
+  //     );
+  //   } catch (error) {
+  //     console.error(error);
+  //     toast.error("Something went wrong. Please try again.");
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // }
 
   // Update form value when role tab is clicked
-  const handleRoleChange = (newRole: UserRole) => {
-    form.setValue("role", newRole);
-  };
+  // const handleRoleChange = (newRole: UserRole) => {
+  //   form.setValue("role", newRole);
+  // };
 
   // Set initial role from URL parameter
-  useEffect(() => {
-    if (defaultRole) {
-      form.setValue("role", defaultRole);
-    }
-  }, [defaultRole, form]);
+  // useEffect(() => {
+  //   if (defaultRole) {
+  //     form.setValue("role", defaultRole);
+  //   }
+  // }, [defaultRole, form]);
 
   return (
     <motion.div
@@ -111,21 +111,20 @@ export function SignupForm() {
       </div>
 
       <div className="space-y-4">
-        <GithubButton variant="signup" selectedRole={role} />
+        <GithubButton variant="signup" selectedRole="contributor" />
 
-        <div className="relative">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-200"></div>
-          </div>
-          <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-white text-gray-500">
-              Or continue with email
-            </span>
-          </div>
+        <div className="text-center text-sm text-gray-600">
+          Already have an account?{" "}
+          <Link
+            href="/auth/login"
+            className="font-medium text-primary hover:text-primary/80 transition-colors"
+          >
+            Sign in
+          </Link>
         </div>
       </div>
 
-      <Form {...form}>
+      {/* <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField
             control={form.control}
@@ -211,17 +210,7 @@ export function SignupForm() {
             </Button>
           </motion.div>
         </form>
-      </Form>
-
-      <div className="text-center text-sm text-gray-600">
-        Already have an account?{" "}
-        <Link
-          href="/auth/login"
-          className="font-medium text-primary hover:text-primary/80 transition-colors"
-        >
-          Sign in
-        </Link>
-      </div>
+      </Form> */}
     </motion.div>
   );
 }

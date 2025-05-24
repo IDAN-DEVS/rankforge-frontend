@@ -16,7 +16,7 @@ export default function MacScreen({
   isWindowFocused?: boolean;
 }) {
   return (
-    <div className={`bg-primary rounded-lg p-4 border border-primary/10`}>
+    <div className={`bg-secondary rounded-lg p-4 border border-secondary/10`}>
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
           <div

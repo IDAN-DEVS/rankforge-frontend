@@ -10,11 +10,17 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { PaintBucket, Bell, Shield, User, Save } from "lucide-react";
+import {
+  // PaintBucket,
+  Bell,
+  Shield,
+  User,
+  Save,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { ThemeSelector } from "@/components/theme-switcher";
+// import { ThemeSelector } from "@/components/theme-switcher";
 
 export default function SettingsPage() {
   const [notifications, setNotifications] = useState({
@@ -37,12 +43,12 @@ export default function SettingsPage() {
         </p>
       </motion.div>
 
-      <Tabs defaultValue="appearance" className="w-full">
-        <TabsList className="grid w-full grid-cols-4 mb-6 md:w-fit">
-          <TabsTrigger value="appearance" className="flex items-center gap-2">
+      <Tabs defaultValue="notifications" className="w-full">
+        <TabsList className="grid w-full grid-cols-3 mb-6 md:w-fit">
+          {/* <TabsTrigger value="appearance" className="flex items-center gap-2">
             <PaintBucket className="h-4 w-4" />
             <span className="hidden sm:inline">Appearance</span>
-          </TabsTrigger>
+          </TabsTrigger> */}
           <TabsTrigger
             value="notifications"
             className="flex items-center gap-2"
@@ -61,7 +67,7 @@ export default function SettingsPage() {
         </TabsList>
 
         <div className="space-y-6">
-          <TabsContent value="appearance" className="mt-0">
+          {/* <TabsContent value="appearance" className="mt-0">
             <Card>
               <CardHeader>
                 <CardTitle>Appearance</CardTitle>
@@ -101,7 +107,7 @@ export default function SettingsPage() {
                 </div>
               </CardContent>
             </Card>
-          </TabsContent>
+          </TabsContent> */}
 
           <TabsContent value="notifications" className="mt-0">
             <Card>

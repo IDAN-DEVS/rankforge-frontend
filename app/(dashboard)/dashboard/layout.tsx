@@ -11,7 +11,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import CustomDropdown from "@/components/dashboard/custom-dropdown";
-import { ThemeSwitcher } from "@/components/theme-switcher";
+// import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export default function DashboardLayout({
   children,
@@ -53,7 +53,7 @@ export default function DashboardLayout({
           <div className="p-4 border-b border-gray-500">
             <Link href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-white font-bold">RF</span>
+                <span className="font-bold text-primary-foreground">RF</span>
               </div>
               <span className="text-xl font-bold">RankForge</span>
             </Link>
@@ -102,7 +102,9 @@ export default function DashboardLayout({
                 <div className="flex items-center justify-between p-4 border-b border-gray-500">
                   <Link href="/" className="flex items-center space-x-2">
                     <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                      <span className="text-white font-bold">RF</span>
+                      <span className="font-bold text-primary-foreground">
+                        RF
+                      </span>
                     </div>
                     <span className="text-xl font-bold">RankForge</span>
                   </Link>
@@ -183,7 +185,7 @@ export default function DashboardLayout({
                   }))}
                 />
 
-                <ThemeSwitcher />
+                {/* <ThemeSwitcher /> */}
 
                 <CustomDropdown
                   trigger={
