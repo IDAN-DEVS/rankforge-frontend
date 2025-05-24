@@ -17,7 +17,6 @@ export default function NotFound() {
         transition={{ duration: 0.4 }}
         className="text-center space-y-8"
       >
-        {/* Placeholder for 404 illustration */}
         <div className="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto">
           <Image
             src={notFoundIllustration}
