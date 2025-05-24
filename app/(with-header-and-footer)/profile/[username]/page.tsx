@@ -38,137 +38,7 @@ import {
   History,
 } from "lucide-react";
 import { motion } from "motion/react";
-
-// Mock data for demonstration
-const mockProfiles = {
-  johndoe: {
-    id: "1",
-    name: "John Doe",
-    username: "johndoe",
-    email: "john@github.com",
-    avatar: "/images/user_avatar.png",
-    contributions: 32,
-    score: 94,
-    rank: "Gold",
-    joinedAt: "2023-05-15",
-    bio: "Full-stack developer passionate about open source and community projects.",
-    skills: ["JavaScript", "React", "Node.js", "TypeScript", "GraphQL"],
-    location: "San Francisco, CA",
-    socialLinks: {
-      github: "https://github.com/johndoe",
-      twitter: "https://twitter.com/johndoe",
-      linkedin: "https://linkedin.com/in/johndoe",
-      website: "https://johndoe.dev",
-    },
-    stats: {
-      daysActive: 104,
-      projectsContributed: 8,
-      pullRequestsMerged: 41,
-      issuesClosed: 27,
-      reviewsCompleted: 35,
-    },
-    achievements: [
-      { name: "First PR", date: "2023-05-20", icon: "Award" },
-      { name: "Top Contributor", date: "2023-08-15", icon: "Trophy" },
-      { name: "Bug Hunter", date: "2023-06-10", icon: "Bug" },
-    ],
-    recentContributions: [
-      {
-        id: "c1",
-        title: "Fixed navigation bug",
-        type: "Bug Fix",
-        score: 85,
-        date: "2023-10-15",
-      },
-      {
-        id: "c2",
-        title: "Added dark mode support",
-        type: "Feature",
-        score: 92,
-        date: "2023-09-28",
-      },
-      {
-        id: "c3",
-        title: "Improved documentation",
-        type: "Documentation",
-        score: 78,
-        date: "2023-09-10",
-      },
-      {
-        id: "c7",
-        title: "Optimized database queries",
-        type: "Performance",
-        score: 89,
-        date: "2023-09-05",
-      },
-      {
-        id: "c8",
-        title: "Added unit tests",
-        type: "Testing",
-        score: 81,
-        date: "2023-08-22",
-      },
-    ],
-    nextRankProgress: 94, // percentage progress to next rank
-    nextRank: "Platinum",
-  },
-  janesmith: {
-    id: "2",
-    name: "Jane Smith",
-    username: "janesmith",
-    email: "jane@github.com",
-    avatar: "/images/jane_avatar.png",
-    contributions: 28,
-    score: 87,
-    rank: "Silver",
-    joinedAt: "2023-06-20",
-    bio: "Frontend developer specializing in React and UI/UX design.",
-    skills: ["React", "CSS", "UI/UX", "Figma", "NextJS"],
-    location: "London, UK",
-    socialLinks: {
-      github: "https://github.com/janesmith",
-      twitter: "https://twitter.com/janesmith",
-      linkedin: "https://linkedin.com/in/janesmith",
-      website: "https://janesmith.io",
-    },
-    stats: {
-      daysActive: 87,
-      projectsContributed: 5,
-      pullRequestsMerged: 32,
-      issuesClosed: 18,
-      reviewsCompleted: 24,
-    },
-    achievements: [
-      { name: "Design Star", date: "2023-07-12", icon: "Star" },
-      { name: "First Contribution", date: "2023-06-25", icon: "Gift" },
-    ],
-    recentContributions: [
-      {
-        id: "c4",
-        title: "Redesigned landing page",
-        type: "Design",
-        score: 90,
-        date: "2023-10-05",
-      },
-      {
-        id: "c5",
-        title: "Optimized image loading",
-        type: "Performance",
-        score: 88,
-        date: "2023-09-18",
-      },
-      {
-        id: "c6",
-        title: "Added accessibility features",
-        type: "Accessibility",
-        score: 85,
-        date: "2023-08-30",
-      },
-    ],
-    nextRankProgress: 78, // percentage progress to next rank
-    nextRank: "Gold",
-  },
-};
+import { MOCK_PROFILES } from "@/lib/constants";
 
 // Type for contribution activity heatmap
 type ActivityDay = {
@@ -307,17 +177,17 @@ export default function ProfilePage() {
 
   // In a real app, we'd fetch this data from an API
   const profile =
-    mockProfiles[params.username as keyof typeof mockProfiles] || null;
+    MOCK_PROFILES[params.username as keyof typeof MOCK_PROFILES] || null;
 
   if (!profile) {
     return (
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Card>
+          <Card className="bg-muted/30">
             <CardContent className="py-16">
               <div className="text-center">
                 <h1 className="text-3xl font-bold mb-3">User not found</h1>
