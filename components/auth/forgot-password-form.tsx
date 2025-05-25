@@ -93,7 +93,6 @@ export function ForgotPasswordForm() {
   async function onSubmitEmail(data: EmailValues) {
     setIsLoading(true);
     try {
-      console.log("Requesting password reset for:", data.email);
       await new Promise((resolve) => setTimeout(resolve, 1500));
       setEmail(data.email);
       toast.success("Verification code sent to your email");
