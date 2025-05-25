@@ -1,6 +1,6 @@
 export default function TermsPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+    <section className="w-full md:py-32 py-12 flex justify-center items-center min-h-screen">
       <h1 className="text-3xl font-semibold mb-6">Terms of Service</h1>
       <div className="bg-card p-6 rounded-lg shadow-md">
         <p className="text-muted-foreground">
@@ -8,6 +8,6 @@ export default function TermsPage() {
           conditions will be detailed here soon.
         </p>
       </div>
-    </div>
+    </section>
   );
 }
