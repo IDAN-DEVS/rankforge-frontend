@@ -5,6 +5,7 @@ import { MainNav } from "./main-nav";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "../ui/button";
+import { Bars3BottomLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,46 +55,26 @@ export function Header() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-1">
           <MainNav />
-
-          <div className="ml-6 flex items-center space-x-3">
-            <Button
-              size="sm"
-              variant="secondary"
-              className="py-3 text-center text-white rounded-full px-6"
-            >
-              <Link href="/auth/login">Sign In</Link>
-            </Button>
-
-            <Button
-              size="sm"
-              className="py-3 px-6 text-center text-white rounded-full"
-            >
-              <Link href="/auth/signup" onClick={() => setIsMenuOpen(false)}>
-                Sign Up
-              </Link>
-            </Button>
-          </div>
+        </div>
+        <div>
+          <Button size="default" className="md:block hidden">
+            <Link href="/login">Log in/Sign up</Link>
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden flex flex-col space-y-1.5 p-2 rounded-md z-50"
+        <Button
+          size="default"
+          className="md:hidden z-20"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
-          <motion.span
-            animate={isMenuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
-            className="w-6 h-0.5 bg-foreground block transition-all"
-          />
-          <motion.span
-            animate={isMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-            className="w-6 h-0.5 bg-foreground block transition-all"
-          />
-          <motion.span
-            animate={isMenuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
-            className="w-6 h-0.5 bg-foreground block transition-all"
-          />
-        </button>
+          {isMenuOpen ? (
+            <XMarkIcon className="text-black" />
+          ) : (
+            <Bars3BottomLeftIcon className="text-black" />
+          )}
+        </Button>
       </div>
 
       {/* Mobile Menu */}
@@ -104,9 +85,10 @@ export function Header() {
             animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden fixed inset-0 top-0 z-40 bg-background backdrop-blur pt-20 px-6 overflow-y-auto"
+            className="md:hidden fixed inset-0 top-0 z-10 bg-background backdrop-blur pt-20 px-6 overflow-y-auto"
           >
-            <nav className="flex flex-col space-y-6 text-lg relative z-10">
+            {" "}
+            <nav className="flex flex-col space-y-6 text-lg relative z-10 ">
               <Link
                 href="/"
                 className="py-2 border-b border-gray-100 hover:text-primary transition-colors"
@@ -129,21 +111,16 @@ export function Header() {
                 Dashboard
               </Link>
 
-              <div className="flex flex-col space-y-3 pt-4">
-                <Link
-                  href="/auth/login"
-                  className="w-full py-3 border border-gray-200 text-center rounded-full hover:text-primary transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 w-full">
+                <Button
+                  size="default"
+                  className="py-3 text-center rounded-full"
                 >
-                  Sign In
-                </Link>
-
-                <Button size="sm" className="py-3 text-center rounded-full">
                   <Link
                     href="/auth/signup"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Sign Up
+                    Login/Signup
                   </Link>
                 </Button>
               </div>

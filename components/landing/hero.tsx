@@ -1,120 +1,40 @@
-"use client";
-import MacScreen from "@/components/mac-screen";
-import { motion } from "motion/react";
+/* eslint-disable @next/next/no-img-element */
+import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import heroDashboard from "@/public/images/dashboard.png";
 import { Button } from "../ui/button";
 
-// Staggered animation for heading words
-const StaggeredText = ({
-  text,
-  className,
-}: {
-  text: string;
-  className: string;
-}) => {
-  const words = text.split(" ");
-
+const Hero: React.FC = () => {
   return (
-    <h1 className={className}>
-      {words.map((word, idx) => (
-        <motion.span
-          key={idx}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            delay: 0.1 + idx * 0.1,
-            ease: [0.215, 0.61, 0.355, 1], // Cubic bezier for a nice bounce effect
-          }}
-          className="inline-block mr-[0.5rem]"
-        >
-          {word}
-        </motion.span>
-      ))}
-    </h1>
+    <div className="mt-40 w-full min-h-screen flex flex-col items-center justify-center gap-16 inter mb-20">
+      <section className=" max-w-xl flex-1 flex flex-col gap-7 items-center text-center">
+        <h1 className=" text-6xl font-bold text-[#ebebeb]">
+          Shine the spotlight on{" "}
+          <span className="relative inline-block">
+            <span className="relative z-10 text-[#DAFF01]">your work</span>
+            <img
+              
+              src="/images/swipe.png"
+              alt="underline"
+              className="absolute -left-2 right-0 -bottom-4 w-full h-[0.5em] z-0"
+            />
+          </span>
+        </h1>
+        <p className="text-lg text-gray-400">
+          Bring your contributions to the forefront with RankForge
+        </p>
+        <Button size="lg">
+          <Link href="/login">Get Started</Link>
+        </Button>
+      </section>
+      <section className="px-10">
+        <img
+          src="/images/dashboard.png"
+          alt="hero"
+          className="w-7xl h-full hover:scale-[101%] transition-all duration-300 ease-in-out hover:drop-shadow-[0_8px_20px_rgba(45,32,51,0.7)] hover:cursor-pointer"
+        />
+      </section>
+    </div>
   );
 };
 
-export default function Hero() {
-  return (
-    <section
-      className="pt-32 pb-20 px-4 md:px-8 relative overflow-hidden"
-      style={{
-        backgroundImage: `linear-gradient(#7f4a8e5d 1px,transparent 0),linear-gradient(90deg,#7f4a8e5d 1px,transparent 0)`,
-        WebkitBackgroundSize: "6rem 6rem",
-        backgroundSize: "6rem 6rem",
-        backgroundPosition: "fixed",
-      }}
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <StaggeredText
-            text="Contribute. Compete. Climb the Ranks."
-            className="text-5xl lg:text-6xl font-['Satoshi_Bold'] mb-6 text-transparent bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text"
-          />
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="text-xl font-medium text-text-primary/70 max-w-[800px] mx-auto mb-8"
-          >
-            RankForge is a contributor platform for devs that gamifies
-            open-source contributions. Create your profile, log contributions,
-            and get evaluated by admins to earn your rank.
-          </motion.p>
-
-          <motion.div
-            className="flex flex-col sm:flex-row justify-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.5,
-              delay: 0.8,
-              ease: "easeOut",
-            }}
-          >
-            <Button
-              size="lg"
-              className="hover:bg-primary/80 text-white px-8 py-3 rounded-full font-medium"
-            >
-              <Link href="/auth/signup">Get Started</Link>
-            </Button>
-
-            <Button
-              variant="secondary"
-              size="lg"
-              className="px-8 py-3 rounded-full cursor-pointer font-medium"
-            >
-              <Link href="/leaderboard">View Leaderboard</Link>
-            </Button>
-          </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 1,
-            ease: [0.215, 0.61, 0.355, 1], // Cubic bezier for a nice bounce effect
-          }}
-          className="max-w-6xl w-full mx-auto hidden md:block"
-        >
-          <MacScreen
-            isCode={false}
-            isWindowFocused={true}
-            title="./rankforge/dashboard"
-            content={
-              <div className="flex items-center justify-center w-full select-none">
-                <Image src={heroDashboard} alt="Hero Dashboard" />
-              </div>
-            }
-          />
-        </motion.div>
-      </div>
-    </section>
-  );
-}
+export default Hero;

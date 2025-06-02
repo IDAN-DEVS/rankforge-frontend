@@ -13,7 +13,7 @@ export function MainNav() {
   ];
 
   return (
-    <nav className="flex items-center space-x-1 mr-auto">
+    <nav className="flex items-center space-x-1 mx-auto">
       {navItems.map((item) => {
         const isActive = pathname === item.href;
 
