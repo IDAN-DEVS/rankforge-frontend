@@ -58,7 +58,7 @@ export function Header() {
         </div>
         <div>
           <Button size="default" className="md:block hidden">
-            <Link href="/login">Log in/Sign up</Link>
+            <Link href="/auth/login">Log in/Sign up</Link>
           </Button>
         </div>
 
