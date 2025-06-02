@@ -9,7 +9,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 import {
   BarChart,
@@ -41,34 +40,40 @@ export default function DashboardPage() {
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3, delay: 0.1 }}
-          className="flex items-center space-x-2"
-        >
-          <Button
-            variant={timeRange === "week" ? "default" : "outline"}
-            size="sm"
-            onClick={() => setTimeRange("week")}
-          >
-            Week
-          </Button>
-          <Button
-            variant={timeRange === "month" ? "default" : "outline"}
-            size="sm"
-            onClick={() => setTimeRange("month")}
-          >
-            Month
-          </Button>
-          <Button
-            variant={timeRange === "year" ? "default" : "outline"}
-            size="sm"
-            onClick={() => setTimeRange("year")}
-          >
-            Year
-          </Button>
-        </motion.div>
+        <div className="flex justify-center mb-8">
+          <div className="bg-[#232336] rounded-full flex p-1 gap-2">
+            <span
+              className={`hover:cursor-pointer px-6 py-2 rounded-full font-semibold transition-all ${
+                timeRange === "week"
+                  ? "bg-[#DAFF01] text-black shadow"
+                  : "text-gray-400 hover:text-[#DAFF01]"
+              }`}
+              onClick={() => setTimeRange("week")}
+            >
+              <span>Week</span>
+            </span>
+            <span
+              className={`hover:cursor-pointer px-6 py-2 rounded-full font-semibold transition-all ${
+                timeRange === "month"
+                  ? "bg-[#DAFF01] text-black shadow"
+                  : "text-gray-400 hover:text-[#DAFF01]"
+              }`}
+              onClick={() => setTimeRange("month")}
+            >
+              <span>Monthly</span>
+            </span>
+            <span
+              className={`hover:cursor-pointer px-6 py-2 rounded-full font-semibold transition-all ${
+                timeRange === "year"
+                  ? "bg-[#DAFF01] text-black shadow"
+                  : "text-gray-400 hover:text-[#DAFF01]"
+              }`}
+              onClick={() => setTimeRange("year")}
+            >
+              <span>Year</span>
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* Stats Overview */}
