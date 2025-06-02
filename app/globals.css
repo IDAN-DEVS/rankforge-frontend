@@ -134,7 +134,7 @@ code {
     url("/satoshi-webfont/Satoshi-BlackItalic.woff") format("woff");
 }
 
-img {
+img:not(.dashboard-img) {
   pointer-events: none;
 }
 
