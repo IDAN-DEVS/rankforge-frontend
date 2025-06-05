@@ -2,18 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import { navItems } from "@/lib/constants";
 export function MainNav() {
   const pathname = usePathname();
 
-  const navItems = [
-    { label: "Home", href: "/" },
-    { label: "Leaderboard", href: "/leaderboard" },
-    { label: "Dashboard", href: "/dashboard" },
-  ];
-
   return (
-    <nav className="flex items-center space-x-1 mr-auto">
+    <nav className="flex items-center space-x-1 mx-auto">
       {navItems.map((item) => {
         const isActive = pathname === item.href;
 
@@ -25,7 +19,7 @@ export function MainNav() {
               px-4 py-2 rounded-full text-md font-medium transition-colors
               ${
                 isActive
-                  ? "text-primary"
+                  ? "text-primary pointer-none:"
                   : "text-muted-foreground hover:text-primary"
               }
             `}
