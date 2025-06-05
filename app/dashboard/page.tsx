@@ -9,12 +9,12 @@ import Image from "next/image";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { ContributionChart } from "@/components/profile/contribution-chart";
+import ContributionChart from "@/components/profile/contribution-chart";
 
 const mockUser = {
   name: "Alex Johnson",
   email: "alex.j@example.com",
-  avatarUrl: "/avatars/1.png",
+  avatarUrl: "https://i.pravatar.cc/300",
   totalScore: 1550,
 };
 
@@ -129,7 +129,7 @@ export default function Dashboard() {
               </ul>
             </div>
           </div>
-          <div className="md:col-span-1 lg:col-span-2 gap-5 flex flex-col">
+          <div className="md:col-span-1 lg:col-span-2 gap-5 flex flex-col justify-between">
             <ContributionChart />
             <Card className="bg-[#18181b] border-none">
               <CardHeader>
