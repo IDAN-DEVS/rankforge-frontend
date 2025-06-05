@@ -37,7 +37,7 @@ export default function Signup() {
                 Continue with Github{" "}
                 <Github01Icon className="w-7 h-7 text-white" />
               </span>
-              <Button className="w-full">Sign Up With Github</Button>
+              <Button className="w-full">Sign In With Github</Button>
             </div>
           </section>
         </div>
