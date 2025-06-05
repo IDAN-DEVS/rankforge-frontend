@@ -25,7 +25,7 @@ export function MainNav() {
               px-4 py-2 rounded-full text-md font-medium transition-colors
               ${
                 isActive
-                  ? "text-primary"
+                  ? "text-primary pointer-none:"
                   : "text-muted-foreground hover:text-primary"
               }
             `}

@@ -8,7 +8,7 @@ export default function Signup() {
   return (
     <div className="w-full h-screen flex items-center justify-between p-4">
       <section className="w-full md:w-1/2 h-full flex items-center justify-start px-4 md:px-16">
-        <div className="h-10/12 w-sm flex flex-col gap-10 mx-auto">
+        <div className="h-2/3 w-sm flex flex-col gap-10 mx-auto">
           <div className="flex items-center gap-2 mb-10">
             <span className="text-xl font-semibold font-mono">
               <RadioIcon className="w-6 h-6 text-[#DAFF01]" />
@@ -21,11 +21,11 @@ export default function Signup() {
             <h1 className="text-3xl md:text-5xl font-semibold text-[#ebebeb]">
               Hello,
               <br />
-              Nice to meet you
+              Welcome Back
             </h1>
             <p className="text-gray-400">
-              Create your RankForge account to start tracking your
-              contributions.
+              Continue to RankForge with your Github account to start tracking
+              your contributions.
             </p>
           </div>
           <section>
@@ -34,20 +34,11 @@ export default function Signup() {
                 className="w-full text-gray-400 bg-[#18181b] rounded-lg px-4 py-2 flex items-center gap-2 justify-center"
                 aria-disabled={true}
               >
-                Create an account with Github{" "}
+                Continue with Github{" "}
                 <Github01Icon className="w-7 h-7 text-white" />
               </span>
               <Button className="w-full">Sign Up With Github</Button>
             </div>
-            <span className="text-gray-400 text-sm hover:cursor-pointer">
-              Already have an account?{" "}
-              <Link
-                href="/auth/login"
-                className="hover:text-[#DAFF01] transition-all"
-              >
-                Log in
-              </Link>
-            </span>
           </section>
         </div>
       </section>

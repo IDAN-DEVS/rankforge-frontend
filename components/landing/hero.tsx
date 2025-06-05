@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
           Bring your contributions to the forefront with RankForge
         </p>
         <Button size="lg">
-          <Link href="/auth/login">Get Started</Link>
+          <Link href="/auth/signup">Get Started</Link>
         </Button>
       </section>
       <section className="px-10">
