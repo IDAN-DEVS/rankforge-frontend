@@ -6,11 +6,12 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "../ui/button";
 import { Bars3BottomLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
-
+import { navItems } from "@/lib/constants";
+import { usePathname } from "next/navigation";
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
+const pathname = usePathname();
   // Handle scroll effect for header
   useEffect(() => {
     const handleScroll = () => {
@@ -89,27 +90,18 @@ export function Header() {
           >
             {" "}
             <nav className="flex flex-col space-y-6 text-lg relative z-10 ">
-              <Link
-                href="/"
-                className="py-2 border-b border-gray-100 hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                href="/leaderboard"
-                className="py-2 border-b border-gray-100 hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Leaderboard
-              </Link>
-              <Link
-                href="/dashboard"
-                className="py-2 border-b border-gray-100 hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Dashboard
-              </Link>
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`py-2 border-b border-gray-100 hover:text-primary transition-colors ${
+                    pathname === item.href ? "text-primary pointer-none" : ""
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 w-full">
                 <Button

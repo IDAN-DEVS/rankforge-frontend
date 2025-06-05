@@ -1,3 +1,9 @@
+export 
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "Leaderboard", href: "/leaderboard" },
+    { label: "Dashboard", href: "/dashboard" },
+  ];
 export const FAQs = [
   {
     question: "What is RankForge?",

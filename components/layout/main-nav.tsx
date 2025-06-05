@@ -2,15 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import { navItems } from "@/lib/constants";
 export function MainNav() {
   const pathname = usePathname();
-
-  const navItems = [
-    { label: "Home", href: "/" },
-    { label: "Leaderboard", href: "/leaderboard" },
-    { label: "Dashboard", href: "/dashboard" },
-  ];
 
   return (
     <nav className="flex items-center space-x-1 mx-auto">
