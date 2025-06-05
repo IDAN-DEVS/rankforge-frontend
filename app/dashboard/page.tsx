@@ -2,11 +2,14 @@
 import {
   CheckBadgeIcon,
   ClockIcon,
-  DocumentPlusIcon,
   TrophyIcon,
 } from "@heroicons/react/24/outline";
 
 import Image from "next/image";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
+import { ContributionChart } from "@/components/profile/contribution-chart";
 
 const mockUser = {
   name: "Alex Johnson",
@@ -57,10 +60,10 @@ const mockSubmissions = [
 
 export default function Dashboard() {
   return (
-    <div className="min-h-screen w-full bg-[#111113] flex flex-col items-center">
+    <div className="min-h-screen w-full bg-[#111113] flex flex-col items-center mt-20">
       {/* Profile Summary */}
       <div className="flex flex-col px-5 w-full mt-8 h-full">
-        <div className="h-[calc(100vh-10rem)] w-full grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-5 mb-10">
+        <div className=" w-full grid grid-cols-1 md:grid-cols-4 lg:grid-cols-7 gap-5 mb-10">
           <div className="col-span-2 h-96 md:h-full flex flex-col-reverse md:flex-row lg:flex-col-reverse bg-[#18181b] rounded-2xl overflow-hidden shadow-lg p-4">
             <div className="w-full md:w-1/2 lg:w-full px-2 py-7 flex flex-col justify-center">
               <h3 className="text-2xl font-bold text-white mb-2">
@@ -124,31 +127,92 @@ export default function Dashboard() {
                   </li>
                 ))}
               </ul>
-             
             </div>
           </div>
-          <div className="col-span-1 flex items-center gap-3 flex-col">
-            <div className="col-span-1 flex flex-col items-center bg-[#18181b] rounded-2xl shadow-lg p-4 hover:cursor-pointer hover:scale-[101%] transition-all duration-300 h-56">
-              <div className="h-2/3 flex items-center justify-center mb-4 gap-6 bg-[#DAFF01] w-full rounded-xl">
-                <DocumentPlusIcon className="w-14 h-14 text-black" />
-              </div>
-              <div className="flex items-center ">
-                <span className="text-center px-4 text-white font-semibold text-xl shadow">
-                  Log New Contribution
-                </span>
-              </div>
-            </div>
-            <div className="col-span-1 flex flex-col items-center bg-[#18181b] rounded-2xl shadow-lg p-4 hover:cursor-pointer hover:scale-[101%] transition-all duration-300 h-56">
-              <div className="h-2/3 flex items-center justify-center mb-4 gap-6 bg-[#DAFF01] w-full rounded-xl">
-                <DocumentPlusIcon className="w-14 h-14 text-black" />
-              </div>
-              <div className="flex items-center ">
-                <span className="text-center px-4 text-white font-semibold text-xl shadow">
-                  Log New Contribution
-                </span>
-              </div>
-            </div>
+          <div className="md:col-span-1 lg:col-span-2 gap-5 flex flex-col">
+            <ContributionChart />
+            <Card className="bg-[#18181b] border-none">
+              <CardHeader>
+                <CardTitle className="text-white">Skill Proficiency</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {[
+                    { name: "React", level: 90 },
+                    { name: "TypeScript", level: 85 },
+                    { name: "Node.js", level: 80 },
+                  ].map((skill) => (
+                    <div key={skill.name}>
+                      <div className="flex justify-between mb-1">
+                        <span className="text-white">{skill.name}</span>
+                        <span className="text-gray-400">{skill.level}%</span>
+                      </div>
+                      <Progress
+                        value={skill.level}
+                        className="h-2 bg-gray-700"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
+        </div>
+        <div className=" w-full grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
+          <Card className="bg-[#18181b] border-none">
+            <CardHeader>
+              <CardTitle className="text-white">Featured Projects</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center justify-between gap-4">
+                {[
+                  {
+                    name: "Project Alpha",
+                    description: "A full-stack web application",
+                    stars: 120,
+                    contributions: 45,
+                  },
+                  // ... more projects
+                ].map((project) => (
+                  <div
+                    key={project.name}
+                    className="p-4 bg-[#232336] rounded-lg"
+                  >
+                    <h3 className="text-white font-medium">{project.name}</h3>
+                    <p className="text-gray-400 text-sm mt-1">
+                      {project.description}
+                    </p>
+                    <div className="flex gap-4 mt-3">
+                      <Badge className="bg-[#DAFF01] text-black">
+                        ⭐ {project.stars}
+                      </Badge>
+                      <Badge variant="outline" className="border-gray-700">
+                        {project.contributions} contributions
+                      </Badge>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-[#18181b] border-none">
+            <CardHeader>
+              <CardTitle className="text-white">Contribution Stats</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 bg-[#232336] rounded-lg text-center">
+                  <div className="text-3xl font-bold text-[#DAFF01]">98%</div>
+                  <p className="text-gray-400">Acceptance Rate</p>
+                </div>
+                <div className="p-4 bg-[#232336] rounded-lg text-center">
+                  <div className="text-3xl font-bold text-[#DAFF01]">4.8</div>
+                  <p className="text-gray-400">Average Score</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
