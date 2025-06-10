@@ -8,10 +8,12 @@ import { Button } from "../ui/button";
 import { Bars3BottomLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { navItems } from "@/lib/constants";
 import { usePathname } from "next/navigation";
+import { useAuth } from "@/lib/auth-context";
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-const pathname = usePathname();
+  const pathname = usePathname();
+  const { user } = useAuth();
   // Handle scroll effect for header
   useEffect(() => {
     const handleScroll = () => {
@@ -58,9 +60,11 @@ const pathname = usePathname();
           <MainNav />
         </div>
         <div>
-          <Button size="default" className="md:block hidden">
-            <Link href="/auth/signup">Log in/Sign up</Link>
-          </Button>
+          {!user && (
+            <Button size="default" className="md:block hidden">
+              <Link href="/auth/signup">Log in/Sign up</Link>
+            </Button>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -90,32 +94,37 @@ const pathname = usePathname();
           >
             {" "}
             <nav className="flex flex-col space-y-6 text-lg relative z-10 ">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`py-2 border-b border-gray-100 hover:text-primary transition-colors ${
-                    pathname === item.href ? "text-primary pointer-none" : ""
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 w-full">
-                <Button
-                  size="default"
-                  className="py-3 text-center rounded-full"
-                >
+              {navItems.map((item) => {
+                if (!user && item.label === "Dashboard") return;
+                return (
                   <Link
-                    href="/auth/signup"
+                    key={item.href}
+                    href={item.href}
+                    className={`py-2 border-b border-gray-100 hover:text-primary transition-colors ${
+                      pathname === item.href ? "text-primary pointer-none" : ""
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Login/Signup
+                    {item.label}
                   </Link>
-                </Button>
-              </div>
+                );
+              })}
+
+              {!user && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 w-full">
+                  <Button
+                    size="default"
+                    className="py-3 text-center rounded-full"
+                  >
+                    <Link
+                      href="/auth/signup"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Login/Signup
+                    </Link>
+                  </Button>
+                </div>
+              )}
             </nav>
           </motion.div>
         )}

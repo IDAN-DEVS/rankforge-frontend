@@ -63,7 +63,7 @@ export function AdminHeader() {
                       key={item.href}
                       variant={pathname === item.href ? "secondary" : "ghost"}
                       className="w-full justify-start"
-                      asChild
+                      
                     >
                       <Link href={item.href}>
                         <span className="mr-2">{item.icon}</span>

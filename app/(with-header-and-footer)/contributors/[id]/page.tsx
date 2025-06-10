@@ -247,7 +247,7 @@ export default function PublicProfilePage({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8"
         >
           <Card className="bg-[#18181b] border-none">
             <CardContent className="p-4 text-center">
@@ -278,243 +278,99 @@ export default function PublicProfilePage({
               <p className="text-xs text-gray-400">Contributions</p>
             </CardContent>
           </Card>
-
-          <Card className="bg-[#18181b] border-none">
-            <CardContent className="p-4 text-center">
-              <Users className="mx-auto mb-2 h-6 w-6 text-[#DAFF01]" />
-              <div className="text-2xl font-bold text-white">
-                {profile.stats.reviewsCompleted}
-              </div>
-              <p className="text-xs text-gray-400">Reviews</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-[#18181b] border-none">
-            <CardContent className="p-4 text-center">
-              <Medal className="mx-auto mb-2 h-6 w-6 text-[#DAFF01]" />
-              <div className="text-2xl font-bold text-white">
-                {profile.rank}
-              </div>
-              <p className="text-xs text-gray-400">Current Rank</p>
-            </CardContent>
-          </Card>
         </motion.div>
-
-        {/* Tabs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
         >
-          <Tabs
-            value={activeTab}
-            onValueChange={setActiveTab}
-            className="space-y-6"
-          >
-            <TabsList className="bg-[#18181b] p-1">
-              <TabsTrigger
-                value="overview"
-                className="data-[state=active]:bg-[#DAFF01] data-[state=active]:text-black"
-              >
-                Overview
-              </TabsTrigger>
-              <TabsTrigger
-                value="contributions"
-                className="data-[state=active]:bg-[#DAFF01] data-[state=active]:text-black"
-              >
-                Contributions
-              </TabsTrigger>
-              <TabsTrigger
-                value="achievements"
-                className="data-[state=active]:bg-[#DAFF01] data-[state=active]:text-black"
-              >
-                Achievements
-              </TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="overview" className="space-y-6">
-              {/* Skills and progress */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="md:col-span-2 bg-[#18181b] border-none">
-                  <CardHeader>
-                    <CardTitle className="text-white">
-                      Recent Activity
-                    </CardTitle>
-                    <CardDescription className="text-gray-400">
-                      Latest contributions and achievements
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Table>
-                      <TableHeader>
-                        <TableRow className="border-gray-800">
-                          <TableHead className="text-gray-400">Title</TableHead>
-                          <TableHead className="text-gray-400">Type</TableHead>
-                          <TableHead className="text-gray-400">Date</TableHead>
-                          <TableHead className="text-gray-400">Score</TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        {profile.recentContributions.map((contribution) => (
-                          <TableRow
-                            key={contribution.id}
-                            className="border-gray-800"
-                          >
-                            <TableCell className="font-medium text-white">
-                              {contribution.title}
-                            </TableCell>
-                            <TableCell>
-                              <Badge
-                                variant="outline"
-                                className="border-gray-700"
-                              >
-                                {contribution.type}
-                              </Badge>
-                            </TableCell>
-                            <TableCell className="text-gray-400">
-                              {new Date(contribution.date).toLocaleDateString()}
-                            </TableCell>
-                            <TableCell>
-                              <Badge className="bg-[#DAFF01] text-black">
-                                {contribution.score}
-                              </Badge>
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </CardContent>
-                </Card>
-
-                <div className="space-y-6">
-                  <Card className="bg-[#18181b] border-none">
-                    <CardHeader>
-                      <CardTitle className="text-white">Skills</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex flex-wrap gap-2">
-                        {profile.skills.map((skill, i) => (
-                          <Badge
-                            key={i}
-                            className="bg-[#232336] text-white hover:bg-[#232336]/80"
-                          >
-                            {skill}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="md:col-span-2 bg-[#18181b] border-none">
+              <CardHeader>
+                <CardTitle className="text-white">Recent Activity</CardTitle>
+                <CardDescription className="text-gray-400">
+                  Latest contributions and achievements
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Table>
+                  <TableHeader>
+                    <TableRow className="border-gray-800">
+                      <TableHead className="text-gray-400">Title</TableHead>
+                      <TableHead className="text-gray-400">Type</TableHead>
+                      <TableHead className="text-gray-400">Date</TableHead>
+                      <TableHead className="text-gray-400">Score</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {profile.recentContributions.map((contribution) => (
+                      <TableRow
+                        key={contribution.id}
+                        className="border-gray-800"
+                      >
+                        <TableCell className="font-medium text-white">
+                          {contribution.title}
+                        </TableCell>
+                        <TableCell>
+                          <Badge variant="outline" className="border-gray-700">
+                            {contribution.type}
                           </Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="bg-[#18181b] border-none">
-                    <CardHeader>
-                      <CardTitle className="text-white">
-                        Rank Progress
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <div className="flex justify-between text-sm text-gray-400">
-                        <span>Current: {profile.score} points</span>
-                        <span>Next: {profile.nextRank}</span>
-                      </div>
-                      <Progress
-                        value={profile.nextRankProgress}
-                        className="h-2 bg-gray-700"
-                      />
-                      <p className="text-sm text-gray-400">
-                        {100 - profile.nextRankProgress}% more to reach{" "}
-                        {profile.nextRank} rank
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="contributions">
-              <Card className="bg-[#18181b] border-none">
-                <CardHeader>
-                  <CardTitle className="text-white">
-                    All Contributions
-                  </CardTitle>
-                  <CardDescription className="text-gray-400">
-                    Complete history of contributions and their scores
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Table>
-                    <TableHeader>
-                      <TableRow className="border-gray-800">
-                        <TableHead className="text-gray-400">Title</TableHead>
-                        <TableHead className="text-gray-400">Type</TableHead>
-                        <TableHead className="text-gray-400">Date</TableHead>
-                        <TableHead className="text-gray-400">Score</TableHead>
+                        </TableCell>
+                        <TableCell className="text-gray-400">
+                          {new Date(contribution.date).toLocaleDateString()}
+                        </TableCell>
+                        <TableCell>
+                          <Badge className="bg-[#DAFF01] text-black">
+                            {contribution.score}
+                          </Badge>
+                        </TableCell>
                       </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {profile.recentContributions.map((contribution) => (
-                        <TableRow
-                          key={contribution.id}
-                          className="border-gray-800"
-                        >
-                          <TableCell className="font-medium text-white">
-                            {contribution.title}
-                          </TableCell>
-                          <TableCell>
-                            <Badge
-                              variant="outline"
-                              className="border-gray-700"
-                            >
-                              {contribution.type}
-                            </Badge>
-                          </TableCell>
-                          <TableCell className="text-gray-400">
-                            {new Date(contribution.date).toLocaleDateString()}
-                          </TableCell>
-                          <TableCell>
-                            <Badge className="bg-[#DAFF01] text-black">
-                              {contribution.score}
-                            </Badge>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </CardContent>
-              </Card>
-            </TabsContent>
+                    ))}
+                  </TableBody>
+                </Table>
+              </CardContent>
+            </Card>
 
-            <TabsContent value="achievements">
+            <div className="space-y-6">
               <Card className="bg-[#18181b] border-none">
                 <CardHeader>
-                  <CardTitle className="text-white">Achievements</CardTitle>
-                  <CardDescription className="text-gray-400">
-                    Badges and milestones earned
-                  </CardDescription>
+                  <CardTitle className="text-white">Skills</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {profile.achievements.map((achievement, i) => (
-                      <Card key={i} className="bg-[#232336] border-none">
-                        <CardContent className="p-6 flex items-center gap-4">
-                          <div className="h-12 w-12 rounded-full bg-[#DAFF01]/10 flex items-center justify-center text-[#DAFF01]">
-                            <Award className="h-6 w-6" />
-                          </div>
-                          <div>
-                            <h3 className="font-medium text-white">
-                              {achievement.name}
-                            </h3>
-                            <p className="text-sm text-gray-400">
-                              {new Date(achievement.date).toLocaleDateString()}
-                            </p>
-                          </div>
-                        </CardContent>
-                      </Card>
+                  <div className="flex flex-wrap gap-2">
+                    {profile.skills.map((skill, i) => (
+                      <Badge
+                        key={i}
+                        className="bg-[#232336] text-white hover:bg-[#232336]/80"
+                      >
+                        {skill}
+                      </Badge>
                     ))}
                   </div>
                 </CardContent>
               </Card>
-            </TabsContent>
-          </Tabs>
+
+              <Card className="bg-[#18181b] border-none">
+                <CardHeader>
+                  <CardTitle className="text-white">Rank Progress</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex justify-between text-sm text-gray-400">
+                    <span>Current: {profile.score} points</span>
+                    <span>Next: {profile.nextRank}</span>
+                  </div>
+                  <Progress
+                    value={profile.nextRankProgress}
+                    className="h-2 bg-gray-700"
+                  />
+                  <p className="text-sm text-gray-400">
+                    {100 - profile.nextRankProgress}% more to reach{" "}
+                    {profile.nextRank} rank
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </motion.div>
       </section>
     </section>

@@ -69,6 +69,13 @@ export default function Dashboard() {
               <h3 className="text-2xl font-bold text-white mb-2">
                 {mockUser.name}
               </h3>
+              <div className="flex items-center gap-2 mb-3">
+                <div className="px-3 py-1 bg-[#DAFF01] rounded-full">
+                  <span className="text-black font-semibold">
+                    {mockUser.totalScore} pts
+                  </span>
+                </div>
+              </div>
               <p className="text-gray-400">
                 Get a place on the public leaderboard with the score from your
                 contribution.

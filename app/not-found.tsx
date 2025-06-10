@@ -47,7 +47,7 @@ export default function NotFound() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.4 }}
         >
-          <Button onClick={() => router.back()} asChild size="lg">
+          <Button onClick={() => router.back()} size="lg">
             <div className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />
               Go Back

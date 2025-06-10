@@ -72,22 +72,7 @@ export function Footer() {
                   Dashboard
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/docs"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Documentation
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/guidelines"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Contribution Guidelines
-                </Link>
-              </li>
+            
             </ul>
           </div>
 
