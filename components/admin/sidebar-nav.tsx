@@ -33,7 +33,7 @@ export function AdminSidebarNav({
               ? "bg-muted hover:bg-muted"
               : "hover:bg-transparent hover:underline"
           )}
-          asChild
+        
         >
           <Link href={item.href}>
             <span className="mr-2">{item.icon}</span>

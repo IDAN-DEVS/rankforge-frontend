@@ -44,6 +44,7 @@
 body {
   margin: 0;
   font-family: "Satoshi Regular", sans-serif;
+  background-color: #111113;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -133,7 +134,7 @@ code {
     url("/satoshi-webfont/Satoshi-BlackItalic.woff") format("woff");
 }
 
-img {
+img:not(.dashboard-img) {
   pointer-events: none;
 }
 

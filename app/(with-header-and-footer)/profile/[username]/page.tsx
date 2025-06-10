@@ -244,7 +244,7 @@ export default function ProfilePage() {
                 <p className="mb-4 max-w-2xl">{profile.bio}</p>
 
                 <div className="flex flex-wrap justify-center sm:justify-start gap-2">
-                  <Button variant="outline" size="sm" asChild>
+                  <Button variant="outline" size="sm" >
                     <a
                       href={profile.socialLinks.github}
                       target="_blank"
@@ -253,7 +253,7 @@ export default function ProfilePage() {
                       <Github className="mr-1 h-4 w-4" /> GitHub
                     </a>
                   </Button>
-                  <Button variant="outline" size="sm" asChild>
+                  <Button variant="outline" size="sm" >
                     <a
                       href={profile.socialLinks.twitter}
                       target="_blank"
@@ -262,7 +262,7 @@ export default function ProfilePage() {
                       <Twitter className="mr-1 h-4 w-4" /> Twitter
                     </a>
                   </Button>
-                  <Button variant="outline" size="sm" asChild>
+                  <Button variant="outline" size="sm" >
                     <a
                       href={profile.socialLinks.linkedin}
                       target="_blank"
@@ -271,7 +271,7 @@ export default function ProfilePage() {
                       <Linkedin className="mr-1 h-4 w-4" /> LinkedIn
                     </a>
                   </Button>
-                  <Button variant="outline" size="sm" asChild>
+                  <Button variant="outline" size="sm" >
                     <a
                       href={profile.socialLinks.website}
                       target="_blank"

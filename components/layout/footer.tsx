@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import { motion } from "motion/react";
 import { Github, Linkedin, Twitter } from "lucide-react";
+import { Button } from "../ui/button";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,22 +10,15 @@ export function Footer() {
   const SocialIcon = ({
     children,
     href,
-    label,
   }: {
     children: React.ReactNode;
     href: string;
-    label: string;
   }) => (
-    <motion.a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={label}
-      className="w-10 h-10 flex items-center justify-center rounded-full bg-secondary text-muted-foreground hover:bg-secondary/50 hover:text-white transition-colors duration-300"
-      whileTap={{ scale: 0.95 }}
-    >
-      {children}
-    </motion.a>
+    <Link href={href}>
+      <Button variant={"outline"} className={`rounded-full w-12 h-12`}>
+        {children}
+      </Button>
+    </Link>
   );
 
   return (
@@ -47,13 +40,13 @@ export function Footer() {
 
             {/* Social Media */}
             <div className="flex space-x-3">
-              <SocialIcon href="https://twitter.com" label="Twitter">
+              <SocialIcon href="https://twitter.com">
                 <Twitter />
               </SocialIcon>
-              <SocialIcon href="https://github.com" label="GitHub">
+              <SocialIcon href="https://github.com">
                 <Github />
               </SocialIcon>
-              <SocialIcon href="https://linkedin.com" label="LinkedIn">
+              <SocialIcon href="https://linkedin.com">
                 <Linkedin />
               </SocialIcon>
             </div>
@@ -79,22 +72,7 @@ export function Footer() {
                   Dashboard
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/docs"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Documentation
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/guidelines"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Contribution Guidelines
-                </Link>
-              </li>
+            
             </ul>
           </div>
 

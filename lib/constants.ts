@@ -1,3 +1,8 @@
+export const navItems = [
+  { label: "Leaderboard", href: "/leaderboard" },
+  { label: "Contributors", href: "/contributors" },
+  { label: "Dashboard", href: "/dashboard" },
+];
 export const FAQs = [
   {
     question: "What is RankForge?",
@@ -76,28 +81,28 @@ export const TESTIMONIALS = [
     role: "Senior Contributor",
     testimonial:
       "RankForge has completely transformed how I contribute to open-source projects. The scoring system provides clear feedback on my work and motivates me to improve.",
-    avatar: "/images/avatar1.svg",
+    avatar: "https://i.pravatar.cc/300",
   },
   {
     name: "Sarah Chen",
     role: "Project Admin",
     testimonial:
       "As an admin, RankForge makes it easy to evaluate contributions fairly and consistently. The platform has helped us attract and retain high-quality contributors.",
-    avatar: "/images/avatar2.svg",
+    avatar: "https://i.pravatar.cc/300",
   },
   {
     name: "Michael Okonkwo",
     role: "Junior Developer",
     testimonial:
       "The leaderboard feature creates a friendly competition that pushes everyone to do their best work. I've learned so much faster by participating in this community.",
-    avatar: "/images/avatar3.svg",
+    avatar: "https://i.pravatar.cc/300",
   },
   {
     name: "Priya Sharma",
     role: "Open Source Enthusiast",
     testimonial:
       "I love how RankForge gamifies the contribution process while still maintaining professionalism. It's made contributing to projects much more engaging and rewarding.",
-    avatar: "/images/avatar4.svg",
+    avatar: "https://i.pravatar.cc/300",
   },
 ];
 
@@ -334,7 +339,7 @@ export const MOCK_PROFILES = {
     name: "John Doe",
     username: "johndoe",
     email: "john@github.com",
-    avatar: "/images/user_avatar.png",
+    avatar: "https://i.pravatar.cc/300",
     contributions: 32,
     score: 94,
     rank: "Gold",
@@ -406,7 +411,7 @@ export const MOCK_PROFILES = {
     name: "Robert Johnson",
     username: "robertjohnson",
     email: "robert@github.com",
-    avatar: "/images/robert_avatar.png",
+    avatar: "https://i.pravatar.cc/300",
     contributions: 45,
     score: 92,
     rank: "Gold",
@@ -456,7 +461,7 @@ export const MOCK_PROFILES = {
     name: "Michael Wilson",
     username: "michaelwilson",
     email: "michael@github.com",
-    avatar: "/images/michael_avatar.png",
+    avatar: "https://i.pravatar.cc/300",
     contributions: 37,
     score: 89,
     rank: "Silver",
@@ -505,7 +510,7 @@ export const MOCK_PROFILES = {
     name: "Jane Smith",
     username: "janesmith",
     email: "jane@github.com",
-    avatar: "/images/jane_avatar.png",
+    avatar: "https://i.pravatar.cc/300",
     contributions: 28,
     score: 87,
     rank: "Silver",
@@ -562,7 +567,7 @@ export const MOCK_PROFILES = {
     name: "Emily Davis",
     username: "emilydavis",
     email: "emily@github.com",
-    avatar: "/images/emily_avatar.png",
+    avatar: "https://i.pravatar.cc/300",
     contributions: 19,
     score: 78,
     rank: "Bronze",
@@ -607,3 +612,387 @@ export const MOCK_PROFILES = {
     nextRank: "Silver",
   },
 };
+export const contributors = [
+  {
+    fullName: "Alice Johnson",
+    avatarUrl: "https://i.pravatar.cc/300",
+    email: "alice@example.com",
+    githubLink: "https://github.com/alicejohnson",
+    totalScore: 1550,
+    contributions: [
+      {
+        title: "Implement User Authentication",
+        project: "RankForge Backend",
+        score: 300,
+      },
+      {
+        title: "Add Leaderboard Frontend Component",
+        project: "RankForge Frontend",
+        score: 250,
+      },
+      {
+        title: "Documentation for API Endpoints",
+        project: "RankForge Docs",
+        score: 200,
+      },
+    ],
+  },
+  {
+    fullName: "Bob Williams",
+    avatarUrl: "https://i.pravatar.cc/300",
+    email: "bob@example.com",
+    githubLink: "https://github.com/bobwilliamsdev",
+    totalScore: 1420,
+    contributions: [
+      {
+        title: "Develop Admin Scoring Interface",
+        project: "RankForge Frontend",
+        score: 280,
+      },
+      {
+        title: "Database Schema Design",
+        project: "RankForge Backend",
+        score: 220,
+      },
+      {
+        title: "Fix Bug in Contribution Submission Form",
+        project: "RankForge Frontend",
+        score: 150,
+      },
+    ],
+  },
+  {
+    fullName: "Charlie Brown",
+    avatarUrl: "https://i.pravatar.cc/300",
+    email: "charlie@example.com",
+    githubLink: "https://github.com/charlieb",
+    totalScore: 1380,
+    contributions: [
+      {
+        title: "Refactor Authentication Flow",
+        project: "RankForge Backend",
+        score: 270,
+      },
+      {
+        title: "Create Reusable UI Components",
+        project: "RankForge Frontend",
+        score: 210,
+      },
+      {
+        title: "Write Unit Tests for Scoring Logic",
+        project: "RankForge Backend",
+        score: 180,
+      },
+    ],
+  },
+  {
+    fullName: "Diana Miller",
+    avatarUrl: "https://i.pravatar.cc/300",
+    email: "diana@example.com",
+    githubLink: "https://github.com/dianam",
+    totalScore: 1210,
+    contributions: [
+      {
+        title: "Design User Dashboard Layout",
+        project: "RankForge Frontend",
+        score: 240,
+      },
+      {
+        title: "Add Input Validation to Forms",
+        project: "RankForge Backend",
+        score: 190,
+      },
+      {
+        title: "Update README with Contribution Guidelines",
+        project: "RankForge Docs",
+        score: 120,
+      },
+    ],
+  },
+  {
+    fullName: "Ethan Davis",
+    avatarUrl: "https://i.pravatar.cc/300",
+    email: "ethan@example.com",
+    githubLink: "https://github.com/ethand",
+    totalScore: 1195,
+    contributions: [
+      {
+        title: "Set up CI/CD Pipeline",
+        project: "DevOps",
+        score: 260,
+      },
+      {
+        title: "Optimize Database Queries",
+        project: "RankForge Backend",
+        score: 205,
+      },
+      {
+        title: "Add Basic Styling to Public Pages",
+        project: "RankForge Frontend",
+        score: 110,
+      },
+    ],
+  },
+  {
+    fullName: "Fiona Green",
+    avatarUrl: "https://i.pravatar.cc/300",
+    email: "fiona@example.com",
+    githubLink: "https://github.com/fionag",
+    totalScore: 1150,
+    contributions: [
+      {
+        title: "Implement Role-Based Access Control",
+        project: "RankForge Backend",
+        score: 290,
+      },
+      {
+        title: "Create Admin User Interface",
+        project: "RankForge Frontend",
+        score: 230,
+      },
+      {
+        title: "Review and Score 15 Contributions",
+        project: "Admin Activity",
+        score: 150,
+      },
+    ],
+  },
+  {
+    fullName: "George White",
+    avatarUrl: "https://i.pravatar.cc/300",
+    email: "george@example.com",
+    githubLink: "https://github.com/georgew",
+    totalScore: 1080,
+    contributions: [
+      {
+        title: "Set up Production Environment",
+        project: "DevOps",
+        score: 250,
+      },
+      {
+        title: "Write API Documentation",
+        project: "RankForge Docs",
+        score: 190,
+      },
+      {
+        title: "Add User Profile Endpoint",
+        project: "RankForge Backend",
+        score: 160,
+      },
+    ],
+  },
+  {
+    fullName: "Hannah Black",
+    avatarUrl: "https://i.pravatar.cc/300",
+    email: "hannah@example.com",
+    githubLink: "https://github.com/hannahb",
+    totalScore: 1020,
+    contributions: [
+      {
+        title: "Design Public Leaderboard Page",
+        project: "RankForge Frontend",
+        score: 220,
+      },
+      {
+        title: "Create Contribution Data Model",
+        project: "RankForge Backend",
+        score: 180,
+      },
+      {
+        title: "Add Basic Styling to Forms",
+        project: "RankForge Frontend",
+        score: 100,
+      },
+    ],
+  },
+  {
+    fullName: "Isaac Blue",
+    avatarUrl: "https://i.pravatar.cc/300",
+    email: "isaac@example.com",
+    githubLink: "https://github.com/isaacb",
+    totalScore: 980,
+    contributions: [
+      {
+        title: "Implement JWT Authentication",
+        project: "RankForge Backend",
+        score: 270,
+      },
+      {
+        title: "Add User Registration Endpoint",
+        project: "RankForge Backend",
+        score: 190,
+      },
+      {
+        title: "Write Developer Setup Guide",
+        project: "RankForge Docs",
+        score: 130,
+      },
+    ],
+  },
+  {
+    fullName: "Jasmine Red",
+    avatarUrl: "https://i.pravatar.cc/300",
+    email: "jasmine@example.com",
+    githubLink: "https://github.com/jasminer",
+    totalScore: 910,
+    contributions: [
+      {
+        title: "Create Contributor Dashboard Layout",
+        project: "RankForge Frontend",
+        score: 200,
+      },
+      {
+        title: "Add Contribution Submission Endpoint",
+        project: "RankForge Backend",
+        score: 170,
+      },
+      {
+        title: "Design Homepage Intro Section",
+        project: "RankForge Frontend",
+        score: 100,
+      },
+    ],
+  },
+];
+export const leaderboard = [
+  {
+    rank: 1,
+    fullName: "Alice Johnson",
+    totalScore: 1550,
+    contributions: 120,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 2,
+    fullName: "Bob Williams",
+    totalScore: 1420,
+    contributions: 110,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 3,
+    fullName: "Charlie Brown",
+    totalScore: 1380,
+    contributions: 105,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 4,
+    fullName: "Diana Miller",
+    totalScore: 1210,
+    contributions: 98,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 5,
+    fullName: "Ethan Davis",
+    totalScore: 1195,
+    contributions: 95,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 6,
+    fullName: "Fiona Green",
+    totalScore: 1150,
+    contributions: 90,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 7,
+    fullName: "George White",
+    totalScore: 1080,
+    contributions: 85,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 8,
+    fullName: "Hannah Black",
+    totalScore: 1020,
+    contributions: 80,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 9,
+    fullName: "Isaac Blue",
+    totalScore: 980,
+    contributions: 75,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 10,
+    fullName: "Jasmine Red",
+    totalScore: 910,
+    contributions: 70,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 11,
+    fullName: "Kevin Yellow",
+    totalScore: 880,
+    contributions: 65,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 12,
+    fullName: "Laura Purple",
+    totalScore: 850,
+    contributions: 60,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 13,
+    fullName: "Michael Orange",
+    totalScore: 790,
+    contributions: 55,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 14,
+    fullName: "Nora Pink",
+    totalScore: 760,
+    contributions: 50,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 15,
+    fullName: "Oliver Grey",
+    totalScore: 720,
+    contributions: 45,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 16,
+    fullName: "Paula Cyan",
+    totalScore: 680,
+    contributions: 40,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 17,
+    fullName: "Quentin Magenta",
+    totalScore: 650,
+    contributions: 35,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 18,
+    fullName: "Rachel Teal",
+    totalScore: 610,
+    contributions: 30,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 19,
+    fullName: "Sam Olive",
+    totalScore: 580,
+    contributions: 25,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+  {
+    rank: 20,
+    fullName: "Tina Lime",
+    totalScore: 550,
+    contributions: 20,
+    imageUrl: "https://i.pravatar.cc/300",
+  },
+];

@@ -19,24 +19,26 @@ export function SidebarNav({ className, items, ...props }: SidebarNavProps) {
 
   return (
     <nav className={cn("flex flex-col space-y-1", className)} {...props}>
-      {items.map((item) => (
-        <Button
-          key={item.href}
-          variant={pathname === item.href ? "secondary" : "ghost"}
-          className={cn(
-            "justify-start",
-            pathname === item.href
-              ? "bg-muted hover:bg-muted"
-              : "hover:bg-transparent hover:underline"
-          )}
-          asChild
-        >
-          <Link href={item.href}>
-            <span className="mr-2">{item.icon}</span>
-            {item.title}
-          </Link>
-        </Button>
-      ))}
+      {items.map((item) => {
+        
+        return (
+          <Button
+            key={item.href}
+            variant={pathname === item.href ? "secondary" : "ghost"}
+            className={cn(
+              "justify-start",
+              pathname === item.href
+                ? "bg-muted hover:bg-muted"
+                : "hover:bg-transparent hover:underline"
+            )}
+          >
+            <Link href={item.href}>
+              <span className="mr-2">{item.icon}</span>
+              {item.title}
+            </Link>
+          </Button>
+        );
+      })}
     </nav>
   );
 }
